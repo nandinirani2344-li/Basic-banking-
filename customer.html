@@ -1,0 +1,231 @@
+<!DOC TYPE html>
+	<html lang="en">
+	
+
+	<head>
+	     <meta charset="UTF-8">
+	     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	     <title>Customers</title>
+	    <link rel="stylesheet"
+	     href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+	     <link rel="stylesheet" href="customer.css">
+	     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+	     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@700&display=swap" rel="stylesheet">
+	     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+	</head>
+	
+
+	<body>
+		<div id="nav1">
+		<header>
+			<nav class="cf">
+	     <ul>
+	     	<li><a href="home1.html"><b>Home</b></a></li>	
+            <li><a href="customer.html"><b>Customers &transaction history</b></a></li>	
+            <li><a href="customer.html"><b>Money Transfer</b></a></li>		
+            <li> <a  href="bank.html">About Us</a></li>
+         </ul>
+           </nav>
+         </header>
+         </div>
+	<!-- navbar ends here  -->
+	<section id="main" class="coloured-section">
+	   <br>
+	    <br>
+	      <div class="my-info text-center">
+	          <button class="btnbtn-info" data-toggle="modal" data-target="#sendMoney">Send Money</button>
+	          <a lass="btnbtn-info" href="history.html" data-toggle="modal" data-target="#transactionHistory">See All Transactions</a>
+	      </div>
+	
+
+	<!-- Modal send money -->
+	      <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+	       aria-hidden="true">
+	         <div class="modal-dialog" role="document">
+	           <div class="modal-content">
+	              <div class="modal-header">
+	                   <h5 class="modal-title" id="exampleModalLabel">Send Money</h5>
+	                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                   <span aria-hidden="true">&times;</span>
+	                   </button>
+	              </div>
+	            <div class="modal-body">
+	                 <form action="">
+	            <div class="input-group mb-3">
+	              <input type="text" id="enterSName" class="form-control" placeholder="Sender's username"
+	             aria-label="Sender's username" aria-describedby="basic-addon2">
+	            <div class="input-group-append">
+	             <span class="input-group-text" id="basic-addon2">@tfs.com</span>
+	            </div>
+	            </div>
+	             <div class="input-group mb-3">
+	             <input type="text" id="enterName" class="form-control" placeholder="Recipient's username"
+	             aria-label="Recipient's username" aria-describedby="basic-addon2">
+	        <div class="input-group-append">
+	              <span class="input-group-text" id="basic-addon2">@tfs.com</span>
+	     </div>
+	</div>
+	      <div class="input-group mb-3">
+	        <div class="input-group-prepend">
+	         <span class="input-group-text">Rs</span>
+	         </div>
+	            <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount"
+	             aria-label="Amount">
+	           <div class="input-group-append">
+	           <span class="input-group-text">.00</span>
+	           </div>
+	       </div>
+	   </form>
+	</div>
+	      <div tontype="button" class="btnbtn-secondary" data-dismiss="modal">Close</button>
+	       <button type="button" onclick="sendMoney()" class="btnbtn-success" data-dismiss="modal">Send
+	                        Money</button>
+	      </div>
+	     </div>
+	   </div>
+	</div>
+	
+
+	<!-- Modal transaction History-->
+	 <div class="modal fade" id="transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+	aria-hidden="true">
+	     <div class="modal-dialog" role="document">
+	       <div class="modal-content">
+	         <div class="modal-header">
+	            <h5 class="modal-title" id="exampleModalLabel">Transaction History</h5>
+	             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	               <span aria-hidden="true">&times;</span>
+	             </button>
+	        </div>
+	    <div class="modal-body">
+	   <ol id="transaction-history-body">
+	   </ol>
+	</div>
+	   <div class="modal-footer">
+	     <button type="button" class="btnbtn-danger" data-dismiss="modal">Close</button>
+	   </div>
+	  </div>
+	 </div>
+	</div>
+	
+
+	<!-- table  -->
+	<div class="container">
+	<div class="table-responsive">
+	<table class="table table-hover table-bordered">
+	<thead>
+	      <tr class="table-danger">
+	       <th scope="col">SR. No.</th>
+	       <th scope="col">Name</th>
+	       <th scope="col">Bank ID</th>
+	       <th scope="col">Bank Balance</th>
+	      </tr>
+	</thead>
+	<tbody>
+	    <tr class="table-light">
+	          <td scope="row">1</td>
+	           <td >sanavi</td>
+	           <td>sanavi@tfs.com</td>
+	           <td>
+	           <p id="sanaviBankBalance">65000</p>
+	           </td>
+	    </tr>
+	    <tr class="table-info">
+	           <td scope="row">2</td>
+	             <td>Dakshit</td>
+	            <td>dakshit@tfs.com</td>
+	            <td>
+	            <p id="dakshitBankBalance">67000</p>
+	            </td>
+	    </tr>
+	    <tr class="table-light">
+	            <td scope="row">3</td>
+	            <td>Rakshit Sharma</td>
+	            <td>rakshit@tfs.com</td>
+	            <td>
+	            <p id="rakshitBankBalance">80000</p>
+                </td>
+	    </tr>
+	    <tr class="table-info">
+	            <td scope="row">4</td>
+	            <td>Sharini</td>
+	            <td>sharini@tfs.com</td>
+	            <td>
+	            <p id="shariniBankBalance">78000</p>
+	            </td>
+	    </tr>
+	    <tr class="table-light">
+	            <td scope="row">5</td>
+	            <td>pandith Aradhya</td>
+	            <td>pandith@tfs.com</td>
+	            <td>
+	            <p id="pandithBankBalance">120000</p>
+	            </td>
+	    </tr>
+	    <tr class="table-info">
+	            <td scope="row">6</td>
+	            <td>Nandini Ram</td>
+	            <td>nandini@tfs.com</td>
+	            <td>
+	            <p id="nandiniBankBalance">59000</p>
+	            </td>
+	    </tr>
+	    <tr class="table-light">
+	            <td>7</td>
+	            <td>Tanika despande</td>
+	            <td>tanika@tfs.com</td>
+	            <td>
+             	<p id="tanikaBankBalance">51000</p>
+	            </td>
+	    </tr>
+	    <tr class="table-info">
+	            <td scope="row">8</td>
+	            <td>Rani aras</td>
+	            <td>rani@tfs.com</td>
+	            <td>
+	            <p id="raniBankBalance">37000</p>
+	            </td>
+	    </tr>
+	    <tr class="table-light">
+	            <td scope="row">9</td>
+	            <td>akshitha ponna</td>
+	            <td>akshitha@tfs.com</td>
+	            <td>
+	            <p id="akshithaBankBalance">25000</p>
+	            </td>
+	    </tr>
+	    <tr class="table-info">
+	            <td scope="row">10</td>
+	            <td>Sai ramesh</td>
+	            <td>ramesh@tfs.com</td>
+	            <td>
+             	<p id="rameshBankBalance">14000</p>
+	            </td>
+	    </tr>
+	</tbody>
+	</table>
+	</div>
+	</div>
+	</section>
+	
+
+	<script src="script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+	<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+
+    <div class="footer">
+	<div class="footer content">
+
+	<p>FIND US ON SOCIAL MEDIA </p>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<i class="social-icon fa fa-facebook-square"aria-hidden></i>
+	<i class="social-icon fa fa-instagram" aria-hidden="true"></i>
+		<i class="social-icon fa fa-twitter" aria-hidden="true"></i>
+	<i class="social-icon fa fa-linkedin" aria-hidden="true"></i>
+		
+			<p>© Copyright 2021 Sparks Bank.</p>
+     </div>
+     </div>  
+     </body>
+	</html
